@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--GENERAL-->
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_48">48dp</dimen>
+    <dimen name="margin_56">56dp</dimen>
+    <dimen name="margin_170">170dp</dimen>
+    <dimen name="line_spacing_extra_2">2sp</dimen>
+    <dimen name="line_spacing_extra_4">4sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+
+    <!--CARD DIMENS-->
+    <dimen name="zero">0dp</dimen>
+    <dimen name="card_internal_padding">10dp</dimen>
+    <dimen name="card_corner_radius">4dp</dimen>
+    <dimen name="card_elevation">0dp</dimen>
+
+    <!--EMPTY LIST-->
+
+
+
+
+</resources>

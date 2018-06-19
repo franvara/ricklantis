@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ricklantis</string>
+    <string name="disconnected">NO INTERNET CONNECTION\nThe data may not be updated.</string>
+    <string name="results_not_found">MORTY, DO IT!\nHIT THE BUTTON NOW!</string>
+    <string name="results_not_found_text">There was an error loading the data.\nPlease try again later.</string>
+    <string name="retry">RETRY</string>
+</resources>
