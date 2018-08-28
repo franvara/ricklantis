@@ -15,6 +15,9 @@ import java.util.List;
 import static com.franvara.ricklantis.presentation.app_model.ShowState.HIDE;
 import static com.franvara.ricklantis.presentation.app_model.ShowState.SHOW;
 
+/**
+ * {@link BaseViewModel} for {@link MainActivity}
+ */
 public class MainViewModel extends BaseViewModel {
 
     private final int INITIAL_PAGE = 1;
@@ -61,8 +64,8 @@ public class MainViewModel extends BaseViewModel {
                         }
 
                         if (info != null) {
-                            moreCharacters.setValue(!info.getNext().equals(""));
-                            nextPage.setValue(info.getActual() + 1);
+                            moreCharacters.setValue(!info.getNext().isEmpty());
+                            nextPage.setValue(!info.getNext().isEmpty() ? info.getActual() + 1 : -1);
                         } else {
                             moreCharacters.setValue(true);
                         }
@@ -81,12 +84,15 @@ public class MainViewModel extends BaseViewModel {
     MutableLiveData<List<Character>> getCharacters() {
         return characters;
     }
+
     MutableLiveData<List<Character>> getNextCharacters() {
         return nextCharacters;
     }
+
     MutableLiveData<Boolean> getMoreCharacters() {
         return moreCharacters;
     }
+
     MutableLiveData<Integer> getNextPage() {
         return nextPage;
     }
