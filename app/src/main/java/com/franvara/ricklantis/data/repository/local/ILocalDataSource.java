@@ -9,4 +9,5 @@ public interface ILocalDataSource {
     void saveCharacters(List<Character> characters);
     void clearCharacters();
     List<Character> getCharacters();
+    Character getCharacterDetail(int characterId);
 }

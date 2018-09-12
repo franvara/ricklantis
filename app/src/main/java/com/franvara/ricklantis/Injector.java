@@ -8,9 +8,11 @@ import com.franvara.ricklantis.data.repository.local.LocalDataSource;
 import com.franvara.ricklantis.data.repository.memory.MemoryDataSource;
 import com.franvara.ricklantis.data.repository.remote.RemoteDataSource;
 import com.franvara.ricklantis.domain.threading.UseCaseHandler;
+import com.franvara.ricklantis.domain.use_cases.GetCharacterDetailUseCase;
 import com.franvara.ricklantis.domain.use_cases.GetCharactersUseCase;
 import com.franvara.ricklantis.domain.use_cases.SetConnectionStateUseCase;
 import com.franvara.ricklantis.presentation.ConnectivityChangeReceiver;
+import com.franvara.ricklantis.presentation.detail.DetailViewModelFactory;
 import com.franvara.ricklantis.presentation.main.MainViewModelFactory;
 
 public class Injector {
@@ -44,6 +46,14 @@ public class Injector {
 
     private static GetCharactersUseCase provideGetCharactersUseCase(@NonNull Context context) {
         return new GetCharactersUseCase(provideDataSource(context));
+    }
+
+    public static DetailViewModelFactory provideDetailViewModelFactory(@NonNull Context context) {
+        return new DetailViewModelFactory(provideUseCaseHandler(), provideGetCharacterDetailUseCase(context));
+    }
+
+    private static GetCharacterDetailUseCase provideGetCharacterDetailUseCase(@NonNull Context context) {
+        return new GetCharacterDetailUseCase(provideDataSource(context));
     }
 
 }

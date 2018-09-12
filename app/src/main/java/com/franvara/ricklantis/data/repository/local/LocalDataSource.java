@@ -43,6 +43,10 @@ public class LocalDataSource implements ILocalDataSource {
         return charactersDao.getAll();
     }
 
+    @Override
+    public Character getCharacterDetail(int characterId) {
+        return charactersDao.getOne(characterId);
+    }
 
 
     //endregion

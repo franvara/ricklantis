@@ -1,14 +1,18 @@
 package com.franvara.ricklantis.presentation.main;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.franvara.ricklantis.Injector;
 import com.franvara.ricklantis.R;
@@ -17,6 +21,7 @@ import com.franvara.ricklantis.domain.entities.Character;
 import com.franvara.ricklantis.presentation.ConnectivityChangeReceiver;
 import com.franvara.ricklantis.presentation.app_model.ShowState;
 import com.franvara.ricklantis.presentation.base.BaseActivity;
+import com.franvara.ricklantis.presentation.detail.DetailActivity;
 import com.franvara.ricklantis.presentation.utils.GenericUtils;
 
 import java.util.List;
@@ -87,10 +92,17 @@ public class MainActivity extends BaseActivity implements
 
     //region OnItemClickListener implementation
     @Override
-    public void onItemClick(String characterId) {
-        if (!characterId.equals("0")) {
-            //ToDo startActivity
-            Toast.makeText(this, "item clicked", Toast.LENGTH_SHORT).show();
+    public void onItemClick(int characterId, ImageView image, TextView name) {
+        if (characterId != 0) {
+            Intent intent = new Intent(this, DetailActivity.class);
+
+            ActivityOptionsCompat options;
+            options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,
+                    Pair.create((View) image, getString(R.string.transition_imagen)),
+                    Pair.create(name, getString(R.string.transition_name)));
+
+            intent.putExtra(getString(R.string.key_extra_character_id), characterId);
+            startActivity(intent, options.toBundle());
         } else {
             if (GenericUtils.isNetworkConnectionAvailable(this)) {
                 viewModel.loadCharacters(getNextPageData());

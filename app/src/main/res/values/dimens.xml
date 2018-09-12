@@ -3,6 +3,7 @@
 
     <!--GENERAL-->
     <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
     <dimen name="margin_30">30dp</dimen>
     <dimen name="margin_48">48dp</dimen>
     <dimen name="margin_56">56dp</dimen>
@@ -10,6 +11,7 @@
     <dimen name="line_spacing_extra_2">2sp</dimen>
     <dimen name="line_spacing_extra_4">4sp</dimen>
     <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
 
     <!--CARD DIMENS-->
     <dimen name="zero">0dp</dimen>

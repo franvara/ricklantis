@@ -34,7 +34,7 @@ public class MainRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     //region Interfaces
 
     interface OnItemClickListener {
-        void onItemClick(String characterId);
+        void onItemClick(int characterId, ImageView image, TextView name);
     }
 
     /**
@@ -52,7 +52,7 @@ public class MainRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private OnItemClickListener onItemClickListener;
     private OnLoadMoreListener onLoadMoreListener;
     private Context context;
-    private String selectedItemId;
+    private int selectedItemId;
     private boolean isLoading;
     private int lastVisibleItem, totalItemCount;
 
@@ -69,7 +69,7 @@ public class MainRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         @BindView(R.id.tv_name)
         TextView name;
 
-        String characterId = null;
+        int characterId;
 
         public MainItemViewHolder(View itemView) {
             super(itemView);
@@ -78,7 +78,7 @@ public class MainRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             clickableContainer.setOnClickListener(view -> {
                 if (onItemClickListener != null) {
                     selectedItemId = characterId;
-                    onItemClickListener.onItemClick(selectedItemId);
+                    onItemClickListener.onItemClick(selectedItemId, image, name);
                 }
             });
 
@@ -99,7 +99,7 @@ public class MainRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             refresh.setOnClickListener(view -> {
                 if (onItemClickListener != null) {
-                    onItemClickListener.onItemClick("0");
+                    onItemClickListener.onItemClick(0, null, null);
                 }
             });
         }
@@ -138,7 +138,7 @@ public class MainRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             final Character character = characterList.get(position);
 
-            mainHolder.characterId = character.getId().toString();
+            mainHolder.characterId = character.getId();
 
             Picasso pic = PicassoCache.getPicassoInstance(context);
 

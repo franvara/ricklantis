@@ -1,8 +1,10 @@
 package com.franvara.ricklantis.domain;
 
 import com.franvara.ricklantis.domain.entities.BaseError;
+import com.franvara.ricklantis.domain.entities.Character;
 import com.franvara.ricklantis.domain.entities.ConnectionState;
 import com.franvara.ricklantis.domain.entities.DataCallback;
+import com.franvara.ricklantis.domain.use_cases.requests.GetCharacterDetailRequest;
 import com.franvara.ricklantis.domain.use_cases.requests.GetCharactersRequest;
 import com.franvara.ricklantis.domain.use_cases.responses.GetCharactersResponse;
 
@@ -12,5 +14,8 @@ public interface DataSource {
 
     void getCharacters(GetCharactersRequest request,
                        DataCallback<GetCharactersResponse, BaseError> callback);
+
+    void getCharacterDetail(GetCharacterDetailRequest request,
+                            DataCallback<Character, BaseError> callback);
 
 }

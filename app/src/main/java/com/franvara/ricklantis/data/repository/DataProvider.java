@@ -5,9 +5,10 @@ import com.franvara.ricklantis.data.repository.memory.IMemoryDataSource;
 import com.franvara.ricklantis.data.repository.remote.IRemoteDataSource;
 import com.franvara.ricklantis.domain.DataSource;
 import com.franvara.ricklantis.domain.entities.BaseError;
+import com.franvara.ricklantis.domain.entities.Character;
 import com.franvara.ricklantis.domain.entities.ConnectionState;
 import com.franvara.ricklantis.domain.entities.DataCallback;
-import com.franvara.ricklantis.domain.entities.Info;
+import com.franvara.ricklantis.domain.use_cases.requests.GetCharacterDetailRequest;
 import com.franvara.ricklantis.domain.use_cases.requests.GetCharactersRequest;
 import com.franvara.ricklantis.domain.use_cases.responses.GetCharactersResponse;
 
@@ -83,6 +84,19 @@ public class DataProvider implements DataSource {
         }
 
     }
+
+    @Override
+    public void getCharacterDetail(GetCharacterDetailRequest request,
+                                   DataCallback<Character, BaseError> callback) {
+
+        Character character = localDataSource.getCharacterDetail(request.getId());
+        if (character != null) {
+            callback.onSuccess(character);
+        } else {
+            callback.onFailure(BaseError.getStandardError());
+        }
+    }
+
 
     //endregion
 

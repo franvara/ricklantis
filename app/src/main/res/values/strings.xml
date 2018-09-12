@@ -1,7 +1,25 @@
 <resources>
+
+    <!-- GENERAL -->
     <string name="app_name">ricklantis</string>
     <string name="disconnected">NO INTERNET CONNECTION\nThe data may not be updated.</string>
     <string name="results_not_found">MORTY, DO IT!\nHIT THE BUTTON NOW!</string>
     <string name="results_not_found_text">There was an error loading the data.\nPlease try again later.</string>
     <string name="retry">RETRY</string>
+    <string name="transition_imagen">transitionImagen</string>
+    <string name="transition_name">transitionName</string>
+
+    <!-- KEYS -->
+    <string name="key_extra_character_id">key_extra_character_id</string>
+
+    <!-- DETAIL -->
+    <string name="demo_text">Demo Text</string>
+    <string name="detail_status">STATUS</string>
+    <string name="detail_species">SPECIES</string>
+    <string name="detail_gender">GENDER</string>
+    <string name="detail_origin">ORIGIN</string>
+    <string name="detail_last_location">LAST\nLOCATION</string>
+    <string name="detail_unknown">Unknown</string>
+    <string name="detail_concatenate">%1$s,&#160;%2$s</string>
+
 </resources>

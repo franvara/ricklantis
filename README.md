@@ -7,9 +7,9 @@ LiveData, and Room.
 
 ## Libraries Used
 * Architecture components
-  * [ViewModel] [0] - The ViewModel class is designed to hold and manage UI-related data in a 
+  * [ViewModel][0] - The ViewModel class is designed to hold and manage UI-related data in a 
   life-cycle conscious way.
-  * [LiveData] [1] - An observable data holder class.
+  * [LiveData][1] - An observable data holder class.
 
 * Database
   * [Room][2] - A SQL object mapping library.
@@ -25,7 +25,11 @@ LiveData, and Room.
   * [OkHttp][6] - An HTTP & HTTP/2 client for Android and Java applications.
 
 * Image loader
-  * [Picasso] [7] - A powerful image downloading and caching library for Android.
+  * [Picasso][7] - A powerful image downloading and caching library for Android.
+
+## Look and feel
+[Adaptive icons][8] - An application icon format to make all icons on a device more coherent by 
+unifying the shape of all app icons and opening the door to interesting visual effects. 
 
 [0]: https://developer.android.com/topic/libraries/architecture/viewmodel
 [1]: https://developer.android.com/topic/libraries/architecture/livedata
@@ -35,3 +39,4 @@ LiveData, and Room.
 [5]: https://github.com/google/gson
 [6]: http://square.github.io/okhttp/
 [7]: http://square.github.io/picasso/
+[8]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive

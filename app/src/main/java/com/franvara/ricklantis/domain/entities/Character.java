@@ -1,5 +1,6 @@
 package com.franvara.ricklantis.domain.entities;
 
+import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
@@ -34,12 +35,14 @@ public class Character {
     @SerializedName("gender")
     @Expose
     private String gender;
-/*    @SerializedName("origin")
+    @SerializedName("origin")
     @Expose
+    @Embedded
     private Origin origin;
     @SerializedName("location")
     @Expose
-    private Location location;*/
+    @Embedded
+    private Location location;
     @SerializedName("image")
     @Expose
     private String image;
@@ -114,6 +117,22 @@ public class Character {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public Origin getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(Origin origin) {
+        this.origin = origin;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public String getImage() {
