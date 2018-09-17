@@ -24,6 +24,7 @@
             android:layout_height="0dp"
             android:adjustViewBounds="false"
             android:scaleType="centerCrop"
+            android:transitionName="@string/transition_imagen"
             app:layout_constraintDimensionRatio="h,4:3"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
@@ -40,6 +41,7 @@
             android:padding="@dimen/margin_16"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_20"
+            android:transitionName="@string/transition_name"
             app:layout_constraintBottom_toBottomOf="@+id/iv_detail_character"
             app:layout_constraintEnd_toEndOf="@+id/iv_detail_character"
             app:layout_constraintStart_toStartOf="@+id/iv_detail_character"
@@ -178,7 +180,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
-            app:constraint_referenced_ids="tv_origin,tv_detail_origin" />
+            app:constraint_referenced_ids="tv_origin,tv_detail_origin"
+            tools:layout_editor_absoluteY="507dp" />
 
         <View
             android:id="@+id/line_separator4"
@@ -219,8 +222,10 @@
             android:id="@+id/barrier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
             app:barrierDirection="end"
-            app:constraint_referenced_ids="tv_species,tv_status,tv_gender,tv_origin,tv_last_location" />
+            app:constraint_referenced_ids="tv_species,tv_status,tv_gender,tv_origin,tv_last_location"
+            tools:layout_editor_absoluteX="324dp" />
 
     </android.support.constraint.ConstraintLayout>
 

@@ -29,7 +29,11 @@ LiveData, and Room.
 
 ## Look and feel
 [Adaptive icons][8] - An application icon format to make all icons on a device more coherent by 
-unifying the shape of all app icons and opening the door to interesting visual effects. 
+unifying the shape of all app icons and opening the door to interesting visual effects.
+
+[ConstraintLayout][9] - ConstraintLayout allows you to create large and complex layouts with a flat 
+view hierarchy (no nested view groups)
+
 
 [0]: https://developer.android.com/topic/libraries/architecture/viewmodel
 [1]: https://developer.android.com/topic/libraries/architecture/livedata
@@ -40,3 +44,4 @@ unifying the shape of all app icons and opening the door to interesting visual e
 [6]: http://square.github.io/okhttp/
 [7]: http://square.github.io/picasso/
 [8]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive
+[9]: https://developer.android.com/training/constraint-layout/

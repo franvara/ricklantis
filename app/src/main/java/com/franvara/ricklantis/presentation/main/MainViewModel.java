@@ -31,8 +31,8 @@ public class MainViewModel extends BaseViewModel {
 
     private int page = 0;
 
-    public MainViewModel(UseCaseHandler useCaseHandler,
-                         GetCharactersUseCase getCharactersUseCase) {
+    MainViewModel(UseCaseHandler useCaseHandler,
+                  GetCharactersUseCase getCharactersUseCase) {
         super(useCaseHandler);
         this.getCharactersUseCase = getCharactersUseCase;
     }

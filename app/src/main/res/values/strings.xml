@@ -12,8 +12,15 @@
     <!-- KEYS -->
     <string name="key_extra_character_id">key_extra_character_id</string>
 
+    <!-- EMPTY LIST -->
+    <string name="empty_list_image_description">Empty list image</string>
+
+    <!-- ITEMS -->
+    <string name="loading_refresh_description">Button to refresh</string>
+
     <!-- DETAIL -->
     <string name="demo_text">Demo Text</string>
+    <string name="demo_text_2lines">Demo\nText</string>
     <string name="detail_status">STATUS</string>
     <string name="detail_species">SPECIES</string>
     <string name="detail_gender">GENDER</string>

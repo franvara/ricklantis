@@ -15,4 +15,6 @@
     <color name="card_text_answer">#ff9800</color>
     <color name="card_separator">#444444</color>
 
+    <color name="name_background">#AA000000</color>
+
 </resources>

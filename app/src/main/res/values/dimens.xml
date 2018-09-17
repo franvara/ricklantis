@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--GENERAL-->
+    <!-- GENERAL -->
     <dimen name="margin_8">8dp</dimen>
     <dimen name="margin_16">16dp</dimen>
     <dimen name="margin_30">30dp</dimen>
@@ -13,15 +13,24 @@
     <dimen name="text_size_14">14sp</dimen>
     <dimen name="text_size_20">20sp</dimen>
 
-    <!--CARD DIMENS-->
+    <!-- CARD DIMENS -->
     <dimen name="zero">0dp</dimen>
     <dimen name="card_internal_padding">10dp</dimen>
     <dimen name="card_corner_radius">4dp</dimen>
     <dimen name="card_elevation">0dp</dimen>
 
-    <!--EMPTY LIST-->
+    <!-- ITEMS -->
+    <dimen name="item_character_height">250dp</dimen>
+    <dimen name="item_name_padding_vertical">16dp</dimen>
+    <dimen name="item_name_paddign_horizontal">8dp</dimen>
+    <dimen name="item_name_text_size">20sp</dimen>
 
-
+    <!-- ACTIVITY DETAIL -->
+    <dimen name="detail_card_margin">30dp</dimen>
+    <dimen name="detail_card_corner_radius">4dp</dimen>
+    <dimen name="detail_line_separator_margin">18dp</dimen>
+    <dimen name="detail_padding_bottom">16dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
 
 
 </resources>

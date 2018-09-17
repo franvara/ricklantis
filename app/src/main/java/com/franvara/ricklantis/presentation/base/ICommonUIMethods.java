@@ -5,8 +5,6 @@ import android.view.View;
 
 public interface ICommonUIMethods {
 
-    void showCommonProgress();
-    void hideCommonProgress();
     void showCommonToast(String error);
     void showCommonSnackbar(String message);
     void showCommonSnackbar(String message, @IntegerRes int length,

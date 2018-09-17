@@ -1,74 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/empty_list_image_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/empty_list" />
+
+    <TextView
+        android:id="@+id/tv_empty_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:lineSpacingExtra="@dimen/line_spacing_extra_2"
+        android:text="@string/results_not_found"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_14"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginBottom="@dimen/margin_30"
-            android:layout_marginTop="@dimen/margin_48"
-            android:src="@drawable/empty_list"
-            tools:ignore="ContentDescription"/>
+    <TextView
+        android:id="@+id/tv_empty_list_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="@dimen/line_spacing_extra_4"
+        android:text="@string/results_not_found_text"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/text_size_14"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_empty_list" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_56"
-            android:layout_marginRight="@dimen/margin_56"
-            android:fontFamily="sans-serif"
-            android:gravity="center_horizontal"
-            android:lineSpacingExtra="@dimen/line_spacing_extra_2"
-            android:text="@string/results_not_found"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_14"
-            android:textStyle="bold"/>
+    <Button
+        android:id="@+id/bt_empty_list"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorPrimary"
+        android:enabled="true"
+        android:fontFamily="sans-serif"
+        android:text="@string/retry"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_14"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_empty_list_text" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_56"
-            android:layout_marginRight="@dimen/margin_56"
-            android:layout_marginTop="@dimen/margin_8"
-            android:fontFamily="sans-serif"
-            android:gravity="center_horizontal"
-            android:lineSpacingExtra="@dimen/line_spacing_extra_4"
-            android:text="@string/results_not_found_text"
-            android:textColor="@color/grey"
-            android:textSize="@dimen/text_size_14"
-            android:textStyle="normal"/>
-
-        <!--BUTTON-->
-        <FrameLayout
-            android:id="@+id/fl_empty_list"
-            android:layout_width="@dimen/margin_170"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary">
-
-            <Button
-                android:id="@+id/bt_empty_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?android:attr/selectableItemBackground"
-                android:enabled="true"
-                android:fontFamily="sans-serif"
-                android:text="@string/retry"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_14"
-                android:textStyle="bold" />
-
-        </FrameLayout>
-
-    </LinearLayout>
-
-</android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>

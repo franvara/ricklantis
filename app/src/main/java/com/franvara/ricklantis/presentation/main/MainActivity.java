@@ -3,6 +3,7 @@ package com.franvara.ricklantis.presentation.main;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v4.widget.NestedScrollView;
@@ -43,8 +44,8 @@ public class MainActivity extends BaseActivity implements
     RecyclerView recyclerView;
     @BindView(R.id.srl_main)
     SwipeRefreshLayout swipeRefreshLayout;
-    @BindView(R.id.nsv_empty_list)
-    NestedScrollView nsvEmptyList;
+    @BindView(R.id.cl_empty_list)
+    ConstraintLayout clEmptyList;
 
     Unbinder unbinder;
     private ConnectivityChangeReceiver connectivityChangeReceiver;
@@ -98,7 +99,7 @@ public class MainActivity extends BaseActivity implements
 
             ActivityOptionsCompat options;
             options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,
-                    Pair.create((View) image, getString(R.string.transition_imagen)),
+                    Pair.create(image, getString(R.string.transition_imagen)),
                     Pair.create(name, getString(R.string.transition_name)));
 
             intent.putExtra(getString(R.string.key_extra_character_id), characterId);
@@ -187,10 +188,10 @@ public class MainActivity extends BaseActivity implements
 
     private void showEmptyList(boolean show) {
         if (show) {
-            nsvEmptyList.setVisibility(View.VISIBLE);
+            clEmptyList.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.GONE);
         } else {
-            nsvEmptyList.setVisibility(View.GONE);
+            clEmptyList.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
         }
     }

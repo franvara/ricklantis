@@ -18,20 +18,10 @@ import static com.franvara.ricklantis.domain.entities.ConnectionState.NOT_CONNEC
 public abstract class BaseActivity extends AppCompatActivity implements ICommonUIMethods,
         IConnectionChangeListener{
 
-    @BindView(R.id.fl_progress_container)
-    FrameLayout flProgressContainer;
     @BindColor(R.color.red) int colorRojo;
     private Snackbar notConnectedSnackbar;
 
     //region ICommonUIMethods implementation
-
-    public void showCommonProgress() {
-        flProgressContainer.setVisibility(View.VISIBLE);
-    }
-
-    public void hideCommonProgress() {
-        flProgressContainer.setVisibility(View.GONE);
-    }
 
     public void showCommonToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
@@ -39,7 +29,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ICommonU
 
     public void showCommonSnackbar(String message) {
         final boolean isConnectionSnackbarShown = isConnectionSnackbarShown();
-        Snackbar.make(flProgressContainer, message, Snackbar.LENGTH_LONG)
+        Snackbar.make(findViewById(R.id.toolbar), message, Snackbar.LENGTH_LONG)
                 .addCallback(new Snackbar.Callback() {
                     @Override
                     public void onDismissed(Snackbar transientBottomBar, int event) {
@@ -55,7 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ICommonU
     public void showCommonSnackbar(String message, @IntegerRes int length, String buttonText,
                                    View.OnClickListener action) {
         final boolean isConnectionSnackbarShown = isConnectionSnackbarShown();
-        Snackbar.make(flProgressContainer, message, length)
+        Snackbar.make(findViewById(R.id.toolbar), message, length)
                 .setAction(buttonText, action)
                 .setActionTextColor(colorRojo)
                 .addCallback(new Snackbar.Callback() {
@@ -72,7 +62,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ICommonU
 
     @Override
     public void showNotConnectedSnackbar() {
-        notConnectedSnackbar = Snackbar.make(flProgressContainer,
+        notConnectedSnackbar = Snackbar.make(findViewById(R.id.toolbar),
                 getString(R.string.disconnected),
                 Snackbar.LENGTH_LONG);
         notConnectedSnackbar.show();

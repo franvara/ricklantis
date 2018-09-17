@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.main.MainActivity">
 
-    <!-- Toolbar -->
     <include
         android:id="@+id/toolbar_main"
-        layout="@layout/toolbar" />
+        layout="@layout/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/srl_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:fitsSystemWindows="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main">
 
         <RelativeLayout
             android:id="@+id/rl_container"
@@ -31,9 +40,9 @@
                 android:scrollbars="vertical"
                 tools:listitem="@layout/item_character" />
 
-            <!-- EMPTY LIST-->
+            <!-- EMPTY LIST -->
             <include
-                android:id="@+id/nsv_empty_list"
+                android:id="@+id/cl_empty_list"
                 layout="@layout/empty_list"
                 android:visibility="gone"
                 tools:visibility="visible" />
@@ -42,29 +51,4 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
-    <!-- Layout de espera-->
-    <FrameLayout
-        android:id="@+id/fl_progress_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white_transp"
-        android:clickable="true"
-        android:focusable="true"
-        android:translationZ="8dp"
-        android:visibility="gone"
-        tools:ignore="UnusedAttribute"
-        tools:visibility="visible">
-
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:indeterminate="true"
-            android:indeterminateTint="@color/colorPrimary"
-            android:indeterminateTintMode="src_in"
-            tools:ignore="UnusedAttribute" />
-
-    </FrameLayout>
-
-
-</android.support.design.widget.CoordinatorLayout>
+</android.support.constraint.ConstraintLayout>
